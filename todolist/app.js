@@ -1,43 +1,54 @@
-let buttonEnter = document.getElementById('enter');
-let userInput = document.getElementById('userInput');
-let ul = document.querySelector('ul');
-
-function inputLength() {
-    return userInput.value.length > 0;
-}
-
-function createTodo() {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(userInput.value));
-    ul.appendChild(li);
-    userInput.value = '';
-
-
-    li.onclick = function() {
-        li.classList.toggle('done');
+$ (function(){
+    let buttonEnter = $('#enter');
+    let userInput = $('#userInput');
+    let ul = $('ul');
+    let todoMap=[
+        {
+            ind:1,
+            text:'example'
+        }
+    ]
+    
+    function inputLength() {
+        return !!userInput.val();
     }
+    
+    function createTodo() {
+        let li = $("<li>");
+        li.append(document.createTextNode(userInput.val()));
+        ul.append(li);
+        userInput.val('');
+        localStorage.setItem('Todo_list',JSON.stringify(todoMap));
+    
+        let deleteButton = $('<button>');
+        deleteButton.append(document.createTextNode('X'));
+        li.append(deleteButton);
+        deleteButton.click(deleteTodoItem);
+    
+        li.click(() => {
+            li.toggleClass('done');
+        })
 
-    let deleteButton = document.createElement('button');
-    deleteButton.appendChild(document.createTextNode('X'));
-    li.appendChild(deleteButton);
-    deleteButton.addEventListener('click', deleteTodoItem);
-
-    function deleteTodoItem() {
-        li.classList.add('delete');
+        function deleteTodoItem() {
+            li.toggleClass('done1');
+            li.animate({
+                'margin-left':'-2450px',
+                'margin-right':'2550px',
+            },{duration:2000,queue:true}).fadeOut(1000).remove(4000);
+        }
     }
-}
-
-function changeListAfterKeypress(event) {
-    if (inputLength() && event.which === 13) {
-        createTodo();
+    
+    function changeListAfterKeypress(event) {
+        if ( inputLength() && event.which === 13) {
+            createTodo();
+        }
     }
-}
-
-userInput.addEventListener('keypress', changeListAfterKeypress);
-
-buttonEnter.onclick = function() { 
-    if (inputLength()) {
-        createTodo();
-    }
-};
-
+    
+    userInput.keypress(changeListAfterKeypress);
+    
+    buttonEnter.click (function() { 
+        if (inputLength()) {
+            createTodo();
+        }
+    });
+})
