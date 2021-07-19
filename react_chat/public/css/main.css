@@ -25,13 +25,24 @@ body, html {
 #connect-btn {
     margin-left: 48%;
     color: black;
+    text-decoration: none;
 }
 
 .button {
-    background-color: azure;
-    padding: 10px;
-    width: 100px;
+    background:aquamarine;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+    font-size: 22px;
+    height: 58px;
+    width: 155px;
+    margin: 50px 0 0 50px;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    line-height: 58px;
+}
 
+.button :active {
+    margin-top: 52px;
 }
 
 .heading1 {
@@ -67,15 +78,13 @@ body, html {
 /*Chat message*/
 
 .chat-message-time {
-    color: black;
-    white-space: pre;
-    float: left;
-    font-size: 15px;
+    float: right;
+    color: #aaa;
 }
 
 .chat-message-author {
     font-size: 15px;
-    color: black;
+    color:blue;
     float: left;
 }
 
@@ -87,11 +96,20 @@ body, html {
 }
 
 .chat-message {
-    min-height: 22px;
-    padding-left: 10px;
-    margin: 6px;
+    transition: 1s;
+    display: inline-flex;
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.chat-message ::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /*Message Input*/
@@ -108,7 +126,13 @@ body, html {
     width: 98%;
     margin-left: 1%;
     background-color:lightcyan;
+    overflow-y: auto;
 }
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+  }
 
 .chat-messages-empty {
     padding: 20px;

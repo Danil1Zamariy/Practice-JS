@@ -9,9 +9,9 @@ var ChatMessage = React.createClass({
         var minutes = message.date.getMinutes();
         return (
             <div className='chat-message'>
-                <div className='chat-message-time'>{'(' +hours+ ':' +minutes+ ') '}</div>
                 <div className='chat-message-author'>{message.author}</div>
                 <div className='chat-message-content'>{': ' + message.content}</div>
+                <div className='chat-message-time'>{'(' +hours+ ':' +minutes+ ')'}</div>
             </div>
             
         )
