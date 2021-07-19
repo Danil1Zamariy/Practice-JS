@@ -1,9 +1,119 @@
+/*HTML*/
+
 body, html {
     height: 100%;
+    background-color: cornflowerblue;
 }
 
 #container {
     width: 100%;
     margin: auto;
-    height: 100%;
+    padding: 30px;
 }
+
+.username1 {
+    font-size: 20px;
+    color: black;
+    margin-left: 15%;
+}
+
+#username-input {
+    width: 70%;
+    margin-left: 15%;
+}
+
+#connect-btn {
+    margin-left: 48%;
+    color: black;
+}
+
+.button {
+    background-color: azure;
+    padding: 10px;
+    width: 100px;
+
+}
+
+.heading1 {
+    margin-top: 0%;
+    font-size: 40px;
+    color:orangered;
+    margin-left: 43%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Chat Box*/
+
+.chat-box {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+}
+
+.chat-header {
+    font-size: 20px;
+    color: black;
+    margin-left: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.chat-content {
+    height: 50vh;
+    max-height: 50vh;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Chat message*/
+
+.chat-message-time {
+    color: black;
+    white-space: pre;
+    float: left;
+    font-size: 15px;
+}
+
+.chat-message-author {
+    font-size: 15px;
+    color: black;
+    float: left;
+}
+
+.chat-message-content {
+    white-space: pre;
+    font-size: 15px;
+    color: black;
+    float: left;
+}
+
+.chat-message {
+    min-height: 22px;
+    padding-left: 10px;
+    margin: 6px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/*Message Input*/
+
+.form-control {
+    width: 100%;
+    background-color:lightcyan;
+}
+
+/*Message List*/
+
+.chat-messages {
+    height: 100%;
+    width: 98%;
+    margin-left: 1%;
+    background-color:lightcyan;
+}
+
+.chat-messages-empty {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+}
+
+

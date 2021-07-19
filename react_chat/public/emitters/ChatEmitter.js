@@ -28,7 +28,7 @@ ChatEmitter.prototype.getUsername =function(){
 };
 
 ChatEmitter.prototype.send = function(user, message){
-  this._peers[user].send(message)
+  this._peers[user].send(message);
 }
 
 ChatEmitter.prototype.broadcast = function(message){
@@ -62,8 +62,8 @@ ChatEmitter.prototype.connect = function(username) {
       port: 9000,
       path: 'chat'
     })
-    this.peer.on('open', function(userID) {
-      self.setUsername(userID)
+    this.peer.on('open', function(userId) {
+      self.setUsername(userId)
     });
     this.peer.on('connection', function(connection){
       console.log(connection)
@@ -90,4 +90,4 @@ ChatEmitter.prototype.connect = function(username) {
 
 ChatEmitter.prototype._disconnectFrom = function (username) {
   delete this._peers[username];
-};
+}; 

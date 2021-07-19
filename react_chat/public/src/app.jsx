@@ -6,6 +6,7 @@ $(function(){
         initChat($('#username-input').val(), $('#container')[0]);
         console.log(`Chat connection initiated with username: 
             ${$('#username-input').val()}`) 
+            
     });
 
     function initChat(username, container){

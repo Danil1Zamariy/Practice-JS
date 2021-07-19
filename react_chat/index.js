@@ -15,7 +15,7 @@ console.log(`Server is up on ${port} port`);
 
 var p2pServer = new PeertoPeerServer({ port: 9000, path: "/chat" });
 
-p2pServer.on("connection", function (id) {
+p2pServer.on('connection', function(id) {
   io.emit(Actions.USER_CONNECTED, id);
   console.log(`User connection with #${id} established!`);
 });
